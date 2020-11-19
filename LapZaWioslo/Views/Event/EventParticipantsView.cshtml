@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LapZaWioslo.Models.Participant>
+
+<p/>
+<h3>
+    Participants
+</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventInformation)
+            </th>
+            <th>
+                @Html.ActionLink("Create New", "Create", "Participants") 
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventInformation.Id)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Participants", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", "Participants", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", "Participants", new { id = item.Id }) 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
