@@ -5,41 +5,46 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<div>
+    <div style="display: inline-block;">
+        <h1>Details</h1>
+    </div>
+    <div style="display: inline-block; vertical-align: super; float: right; font-size: 2em;">
+        <div style="display: inline-block;">
+            <a asp-action="Index">
+                <i class="fas fa-arrow-left"> </i>
+            </a>
+        </div>
+        <div style="display: inline-block;">
+            <a asp-action="Edit">
+                <i class="fas fa-edit"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
 
 <div>
-    <h4>EventInformation</h4>
+    <div style="display: inline-block;">
+        <h4>
+            @Html.DisplayFor(model => model.Name)
+        </h4>
+    </div>
+    <div style="display: inline-block; float:right">
+        @Html.DisplayFor(model => model.StartDate) / @Html.DisplayFor(model => model.EndDate)
+    </div>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.AdditionalQuestion)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AdditionalQuestion)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
+
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
 
-@await Html.PartialAsync("EventParticipantsView", Model.Participants)
+<div style="margin-top:80px">
+    @await Html.PartialAsync("EventParticipantsView", Model.Participants)
+</div>

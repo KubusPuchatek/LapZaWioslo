@@ -1,9 +1,17 @@
 ﻿@model IEnumerable<LapZaWioslo.Models.Participant>
 
 <p/>
-<h3>
-    Participants
-</h3>
+<div style="margin-bottom:50px;">
+    <div style="display:inline-block">
+        <h3>Participants</h3>
+    </div>
+    <div style="display: inline-block; vertical-align: super; float:right">
+        <a asp-action="Create" class="btn btn-success">
+            <i class="fas fa-plus-square"></i> Create new
+        </a>
+    </div>
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -13,15 +21,14 @@
             <th>
                 @Html.DisplayNameFor(model => model.Surname)
             </th>
-            <th>
-                @Html.ActionLink("Create New", "Create", "Participants") 
-            </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
+                <a asp-action="Details" asp-route-id="@item.Id">@item.Name</a>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
