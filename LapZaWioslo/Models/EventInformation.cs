@@ -23,6 +23,9 @@ namespace LapZaWioslo.Models
         [Display(Name = "String.Event.EndDate.DisplayName")]
         public DateTime EndDate { get; set; }
 
+        [Display(Name = "String.Event.Description.DisplayName")]
+        public string Description { get; set; }
+
         public virtual ICollection<Participant> Participants { get; set; }
     }
 }
