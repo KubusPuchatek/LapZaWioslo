@@ -10,9 +10,17 @@ namespace LapZaWioslo.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name = "String.Event.Name.DisplayName")]
         public string Name { get; set; }
+
+        [Display(Name = "String.Event.AdditionalQuestion.DisplayName")]
         public string AdditionalQuestion { get; set; }
+
+        [Display(Name = "String.Event.StartDate.DisplayName")]
         public DateTime StartDate { get; set; }
+
+        [Display(Name = "String.Event.EndDate.DisplayName")]
         public DateTime EndDate { get; set; }
 
         public virtual ICollection<Participant> Participants { get; set; }

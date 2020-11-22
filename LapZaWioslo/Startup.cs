@@ -36,22 +36,29 @@ namespace LapZaWioslo
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+            services.AddMvc()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization(options =>
+                {
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                        factory.Create(typeof(DataAnnotationSharedResources));
+                });
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
             services.Configure<RequestLocalizationOptions>(options =>
             {
                 var supportedCultures = new[]
                 {
-                new CultureInfo("en-US"),
-                new CultureInfo("pl-PL"),
-                new CultureInfo("de-DE")
+                            new CultureInfo("en-US"),
+                            new CultureInfo("pl-PL"),
+                            new CultureInfo("de-DE")
                 };
 
                 options.DefaultRequestCulture = new RequestCulture(culture: "pl-PL", uiCulture: "pl-PL");
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
