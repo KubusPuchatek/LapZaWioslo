@@ -19,19 +19,16 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th width="50%">
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AdditionalQuestion)
-            </th>
-            <th>
+            <th width="15%" align="right">
                 @Html.DisplayNameFor(model => model.StartDate)
             </th>
-            <th>
+            <th width="15%" align="right">
                 @Html.DisplayNameFor(model => model.EndDate)
             </th>
-            <th></th>
+            <th width="20%"></th>
         </tr>
     </thead>
     <tbody>
@@ -42,18 +39,18 @@
                     <a asp-action="Details" asp-route-id="@item.Name">@item.Name</a>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.AdditionalQuestion)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.StartDate)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.EndDate)
                 </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">@SharedStringLocalizer["String.Button.Edit"]</a> |
-                    <a asp-action="Details" asp-route-id="@item.Name">@SharedStringLocalizer["String.Button.Details"]</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">@SharedStringLocalizer["String.Button.Delete"]</a>
+                <td align="right">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm" style="text-align:right">
+                        <i class="fas fa-edit"></i> @SharedStringLocalizer["String.Button.Edit"]
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm" style="text-align:right">
+                        <i class="far fa-trash-alt"></i> @SharedStringLocalizer["String.Button.Delete"]
+                    </a>
                 </td>
             </tr>
         }
