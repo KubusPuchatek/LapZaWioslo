@@ -7,7 +7,7 @@
     </div>
     <div style="display: inline-block; vertical-align: super; float:right">
         <a asp-action="Create" class="btn btn-success">
-            <i class="fas fa-plus-square"></i> Create new
+            <i class="fas fa-plus-square"></i> @SharedStringLocalizer["String.Button.CreateNew"]
         </a>
     </div>
 </div>
@@ -29,7 +29,6 @@
         <tr>
             <td>
                 <a asp-action="Details" asp-route-id="@item.Id">@item.Name</a>
-                @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Surname)
