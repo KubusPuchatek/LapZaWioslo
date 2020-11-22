@@ -120,6 +120,9 @@
   <data name="String.Event.AdditionalQuestion.DisplayName" xml:space="preserve">
     <value>Dodatkowe pytanie</value>
   </data>
+  <data name="String.Event.Description.DisplayName" xml:space="preserve">
+    <value>Opis</value>
+  </data>
   <data name="String.Event.EndDate.DisplayName" xml:space="preserve">
     <value>Data zakończenia</value>
   </data>

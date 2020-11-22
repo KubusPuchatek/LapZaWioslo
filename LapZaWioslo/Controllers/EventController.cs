@@ -57,7 +57,7 @@ namespace LapZaWioslo.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,AdditionalQuestion,StartDate,EndDate")] EventInformation eventInformation)
+        public async Task<IActionResult> Create([Bind("Id,Name,AdditionalQuestion,Description,StartDate,EndDate")] EventInformation eventInformation)
         {
             if (ModelState.IsValid)
             {
