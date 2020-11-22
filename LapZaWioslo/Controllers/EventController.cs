@@ -25,17 +25,18 @@ namespace LapZaWioslo.Controllers
             return View(await _context.EventInformation.ToListAsync());
         }
 
-        // GET: Event/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET
+        [Route("Event/Details/{name}")]
+        public async Task<IActionResult> Details(string name)
         {
-            if (id == null)
+            if (name == null)
             {
                 return NotFound();
             }
 
             var eventInformation = await _context.EventInformation
-                .Include(eventData=>eventData.Participants)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Include(eventData => eventData.Participants)
+                .FirstOrDefaultAsync(m => m.Name == name);
 
             if (eventInformation == null)
             {

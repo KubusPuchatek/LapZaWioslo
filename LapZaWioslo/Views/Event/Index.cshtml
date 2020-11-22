@@ -39,7 +39,7 @@
         {
             <tr>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Id">@item.Name</a>
+                    <a asp-action="Details" asp-route-id="@item.Name">@item.Name</a>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AdditionalQuestion)
@@ -52,7 +52,7 @@
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">@SharedStringLocalizer["String.Button.Edit"]</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">@SharedStringLocalizer["String.Button.Details"]</a> |
+                    <a asp-action="Details" asp-route-id="@item.Name">@SharedStringLocalizer["String.Button.Details"]</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">@SharedStringLocalizer["String.Button.Delete"]</a>
                 </td>
             </tr>
