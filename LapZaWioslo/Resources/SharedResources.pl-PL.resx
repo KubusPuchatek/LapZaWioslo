@@ -120,4 +120,13 @@
   <data name="String.Button.CreateNew" xml:space="preserve">
     <value>Nowy</value>
   </data>
+  <data name="String.Button.Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="String.Button.Details" xml:space="preserve">
+    <value>Szczegóły</value>
+  </data>
+  <data name="String.Button.Edit" xml:space="preserve">
+    <value>Edycja</value>
+  </data>
 </root>

@@ -34,9 +34,9 @@
                 @Html.DisplayFor(modelItem => item.Surname)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", "Participants", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", "Participants", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", "Participants", new { id = item.Id }) 
+                @Html.ActionLink(SharedStringLocalizer["String.Button.Edit"], "Edit", "Participants", new { id = item.Id }) |
+                @Html.ActionLink(SharedStringLocalizer["String.Button.Details"], "Details", "Participants", new { id = item.Id }) |
+                @Html.ActionLink(SharedStringLocalizer["String.Button.Delete"], "Delete", "Participants", new { id = item.Id })
             </td>
         </tr>
 }
