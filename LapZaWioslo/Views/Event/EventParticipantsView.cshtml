@@ -28,7 +28,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                <a asp-action="Details" asp-route-id="@item.Id">@item.Name</a>
+                @Html.ActionLink(@item.Name, "Details", "Participants", new { id = item.Id }) |
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Surname)
